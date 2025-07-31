@@ -1,0 +1,30 @@
+{
+  "name": "law-firm-xss-lab",
+  "version": "1.0.0",
+  "description": "Professional law firm website with educational XSS vulnerability",
+  "main": "../Application/server.js",
+  "scripts": {
+    "start": "node ../Application/server.js",
+    "dev": "nodemon ../Application/server.js",
+    "bot": "node ../Application/bot.js",
+    "test": "pytest ../Tests/",
+    "docker-build": "docker build -t law-firm-xss-lab ./Application",
+    "docker-run": "docker run -p 3206:3206 law-firm-xss-lab",
+    "docker-compose-up": "docker-compose up -d",
+    "docker-compose-down": "docker-compose down"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "uuid": "^9.0.1",
+    "sqlite3": "^5.1.6",
+    "puppeteer": "^21.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["web-security", "xss", "educational"],
+  "author": "Security Lab",
+  "license": "MIT"
+} 

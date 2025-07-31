@@ -1,0 +1,65 @@
+{
+  "lab_name": "Law Firm XSS Stored Vulnerability Lab",
+  "lab_description": "A professional law firm website simulation featuring a stored XSS vulnerability in the contact form. Demonstrates how attackers can exploit stored XSS to steal session cookies and gain unauthorized access to administrative functions.",
+  "lab_category": "Web Security",
+  "lab_difficulty": "Intermediate",
+  "lab_technology": ["Node.js", "Express", "SQLite", "Puppeteer", "TailwindCSS"],
+  "lab_vulnerability_type": "Stored XSS",
+  "lab_attack_vector": "Contact Form",
+  "lab_impact": "Session Hijacking",
+  "element_to_proof": "FLAG{XSS_Stored_Vulnerability_Exploited_Successfully}",
+  "final_flag_info": "The flag is obtained by successfully exploiting the stored XSS vulnerability to steal the admin session cookie and access the internal data endpoint.",
+  "walkthrough": [
+    "1. Identify the contact form as the injection point",
+    "2. Submit a malicious JavaScript payload through the contact form",
+    "3. Wait for the admin bot to visit the dashboard (every 30 seconds)",
+    "4. The JavaScript executes in the admin context, stealing the session cookie",
+    "5. Use the stolen cookie to access the /internal-data endpoint",
+    "6. Retrieve the flag from the response"
+  ],
+  "lab_requirements": [
+    "Docker and Docker Compose",
+    "Basic understanding of XSS vulnerabilities",
+    "Knowledge of session management",
+    "Familiarity with web application security"
+  ],
+  "lab_learning_objectives": [
+    "Understand how stored XSS vulnerabilities work",
+    "Learn about session hijacking through cookie theft",
+    "Practice real-world attack scenarios",
+    "Understand the importance of input validation",
+    "Learn about automated bot behavior in web applications"
+  ],
+  "lab_setup_instructions": [
+    "Clone the repository",
+    "Run 'docker-compose up -d'",
+    "Access the application at http://localhost:3206",
+    "Access the admin panel through the application"
+  ],
+  "lab_testing_instructions": [
+    "Submit XSS payload through contact form",
+    "Monitor admin bot behavior",
+    "Verify cookie theft simulation",
+    "Access internal data with stolen session",
+    "Retrieve the final flag"
+  ],
+  "lab_solution_hints": [
+    "The contact form accepts any input without sanitization",
+    "Messages are displayed to administrators without encoding",
+    "The admin bot visits the dashboard every 30 seconds",
+    "Session cookies are accessible via JavaScript",
+    "The flag is in the /internal-data endpoint"
+  ],
+  "lab_mitigation": [
+    "Implement proper input validation and sanitization",
+    "Use Content Security Policy (CSP)",
+    "Set httpOnly flag on session cookies",
+    "Implement output encoding",
+    "Use modern frameworks with built-in XSS protection"
+  ],
+  "lab_author": "Security Lab Team",
+  "lab_version": "1.0.0",
+  "lab_created_date": "2024-01-01",
+  "lab_updated_date": "2024-01-01",
+  "lab_tags": ["xss", "stored-xss", "session-hijacking", "cookie-theft", "web-security", "educational"]
+} 

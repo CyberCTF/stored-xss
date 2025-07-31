@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous - Cabinet Martin & Associés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .team-photo {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="glass border-b border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                            </svg>
+                        </div>
+                        <h1 class="text-2xl font-bold text-blue-400">Martin & Associés</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Accueil</a>
+                        <a href="/about" class="text-blue-400 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors">Qui sommes-nous</a>
+                        <a href="/contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden team-photo py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center animate-fade-in">
+                <h1 class="text-5xl font-bold text-gray-100 mb-6">Qui sommes-nous</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Une équipe d'avocats expérimentés et passionnés, dédiés à la défense de vos droits et à l'excellence juridique
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Photo Section -->
+    <div class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-100 mb-4">Notre Équipe</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Une équipe diversifiée et professionnelle, unie par la passion du droit et l'engagement envers nos clients
+                </p>
+            </div>
+
+            <!-- Team Photo -->
+            <div class="glass rounded-2xl p-8 mb-16 hover-lift">
+                <div class="text-center">
+                    <div class="w-full max-w-4xl mx-auto bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl p-8">
+                        <div class="flex items-center justify-center mb-6">
+                            <svg class="w-12 h-12 text-blue-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <h3 class="text-2xl font-bold text-gray-100">Notre Équipe</h3>
+                        </div>
+                        <p class="text-gray-300 text-lg mb-8">
+                            Quatre professionnels du droit, unis par l'excellence et la diversité
+                        </p>
+                        
+                        <!-- Photo de l'équipe -->
+                        <div class="mb-8">
+                            <img src="/images/image.jpg" alt="Notre équipe d'avocats" class="w-full max-w-3xl mx-auto rounded-xl shadow-2xl border-2 border-blue-500/20">
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Member 1 -->
+                <div class="glass rounded-xl p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Maître Thomas Dubois</h3>
+                        <p class="text-blue-400 font-medium mb-3">Droit Civil & Commercial</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Spécialisé en droit civil et commercial avec plus de 15 ans d'expérience. Expert en contrats, responsabilité civile et contentieux commercial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="glass rounded-xl p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Maître Sophie Leroy</h3>
+                        <p class="text-green-400 font-medium mb-3">Droit Social & Prud'homal</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Experte en droit du travail et contentieux prud'homal. Accompagne les entreprises et salariés dans leurs litiges professionnels.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="glass rounded-xl p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Maître Marie Moreau</h3>
+                        <p class="text-red-400 font-medium mb-3">Droit Pénal & Procédure</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Spécialisée en droit pénal et procédure pénale. Défend les droits fondamentaux et accompagne ses clients dans les procédures judiciaires.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="glass rounded-xl p-6 hover-lift">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Maître Pierre Martin</h3>
+                        <p class="text-purple-400 font-medium mb-3">Droit des Affaires & Fiscalité</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Expert en droit des affaires et fiscalité. Accompagne les entreprises dans leur développement et optimise leur structure juridique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="py-20 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-100 mb-4">Nos Valeurs</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Les principes qui guident notre pratique quotidienne et notre relation avec nos clients
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass rounded-xl p-8 text-center hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-100 mb-4">Excellence</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nous visons l'excellence dans chaque dossier, avec une expertise pointue et une rigueur juridique irréprochable.
+                    </p>
+                </div>
+
+                <div class="glass rounded-xl p-8 text-center hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-100 mb-4">Empathie</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nous comprenons les enjeux de nos clients et les accompagnons avec bienveillance dans leurs démarches juridiques.
+                    </p>
+                </div>
+
+                <div class="glass rounded-xl p-8 text-center hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-100 mb-4">Innovation</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nous adaptons nos méthodes aux évolutions du droit et utilisons les technologies modernes pour optimiser nos services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">Prêt à nous rencontrer ?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Notre équipe d'avocats expérimentés est à votre disposition pour vous accompagner dans tous vos projets juridiques.
+            </p>
+            <a href="/contact" class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Prendre Rendez-vous
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm">
+                © 2024 Cabinet Martin & Associés. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+</body>
+</html> 

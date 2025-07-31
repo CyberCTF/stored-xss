@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Données Internes - Cabinet Martin & Associés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .flag {
+            color: #10b981;
+            background: #065f46;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: monospace;
+            border: 2px solid #10b981;
+            margin: 10px 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="glass border-b border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-400">Martin & Associés</h1>
+                    <span class="ml-4 text-sm text-gray-400">Données Internes</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/admin" class="text-blue-400 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium">
+                        Tableau de Bord
+                    </a>
+                    <button onclick="logout()" class="text-gray-300 hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium">
+                        Déconnexion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-100 mb-2">Données Internes</h1>
+                <p class="text-gray-300">Informations confidentielles du cabinet</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="glass rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-300">Chiffre d'Affaires</p>
+                            <p id="revenue" class="text-2xl font-bold text-gray-100">$2.5M</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-300">Clients Actifs</p>
+                            <p id="clients" class="text-2xl font-bold text-gray-100">150</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-300">Affaires Gagnées</p>
+                            <p id="casesWon" class="text-2xl font-bold text-gray-100">89</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-lg p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-300">Taux de Réussite</p>
+                            <p class="text-2xl font-bold text-gray-100">94%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal Data Section -->
+            <div class="glass rounded-lg">
+                <div class="px-6 py-4 border-b border-gray-700">
+                    <h2 class="text-xl font-semibold text-gray-100">Informations Confidentielles</h2>
+                </div>
+                
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- Flag hidden in plain sight -->
+                        <div class="bg-dark-800 rounded-lg p-4">
+                            <h3 class="text-lg font-semibold text-gray-100 mb-4">Notes Internes</h3>
+                            <div class="text-gray-300 space-y-2">
+                                <p>• Cabinet fondé en 1985 par Maître Martin</p>
+                                <p>• Spécialisation en droit civil et commercial</p>
+                                <p>• Équipe de 12 avocats expérimentés</p>
+                                <p>• Partenaire officiel de la Chambre de Commerce</p>
+                                <p><span class="flag">FLAG{XSS_Stored_Vulnerability_Exploited_Successfully}</span></p>
+                                <p>• Certifié ISO 9001 depuis 2010</p>
+                                <p>• Bureaux à Paris, Lyon et Marseille</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 rounded-lg p-4">
+                            <h3 class="text-lg font-semibold text-gray-100 mb-4">Statistiques Mensuelles</h3>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="text-gray-400">Nouveaux clients</p>
+                                    <p class="text-gray-100 font-semibold">23</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Consultations</p>
+                                    <p class="text-gray-100 font-semibold">156</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Dossiers clos</p>
+                                    <p class="text-gray-100 font-semibold">18</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Heures facturées</p>
+                                    <p class="text-gray-100 font-semibold">1,247</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 rounded-lg p-4">
+                            <h3 class="text-lg font-semibold text-gray-100 mb-4">Projets en Cours</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Refonte site web</span>
+                                    <span class="text-green-400">75%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Formation équipe</span>
+                                    <span class="text-yellow-400">45%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Nouveau logiciel</span>
+                                    <span class="text-blue-400">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load internal data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadInternalData();
+        });
+
+        async function loadInternalData() {
+            try {
+                const response = await fetch('/internal-data');
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        window.location.href = '/admin';
+                        return;
+                    }
+                    throw new Error('Erreur lors du chargement des données');
+                }
+
+                const data = await response.json();
+                updateStats(data.company_data);
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        }
+
+        function updateStats(companyData) {
+            if (companyData) {
+                document.getElementById('revenue').textContent = companyData.revenue;
+                document.getElementById('clients').textContent = companyData.clients;
+                document.getElementById('casesWon').textContent = companyData.cases_won;
+            }
+        }
+
+        function logout() {
+            document.cookie = 'session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            window.location.href = '/admin';
+        }
+    </script>
+</body>
+</html> 
