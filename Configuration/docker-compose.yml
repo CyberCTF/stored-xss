@@ -25,10 +25,16 @@ services:
       dockerfile: Configuration/Dockerfile
     command: node bot.js
     depends_on:
-      - law-firm-app
+      law-firm-app:
+        condition: service_healthy
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    user: "nodejs"
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_ADMIN
     networks:
       - law-firm-network
 
